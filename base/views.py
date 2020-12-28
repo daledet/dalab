@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from django.views.generic import ListView, DetailView
+from .models import Post, Note
 from .forms import PostForm, UpdateForm
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
@@ -24,6 +24,13 @@ class ArticleListView(ListView):
 class ArticleDetailView(DetailView):
     model = Post
     template_name = 'article.html'
+
+
+class NoteListView(ListView):
+    paginate_by = 5
+    model = Note
+    template_name = 'notes.html'
+    ordering = ['-post_date']
 
 
 # class AddArticleView(CreateView):

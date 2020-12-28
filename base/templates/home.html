@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dwight Ledet</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     {% load static %}
 </head>
@@ -29,9 +29,9 @@
           <nav class="uppercase md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
             <a class="mr-5 hover:text-blue-700" href="#">Project</a>
             <a class="mr-5 hover:text-blue-700" href="{% url 'articles' %}" >Articles</a>
-            <a class="mr-5 hover:text-blue-700" href="notes.html">Notes</a>
+            <a class="mr-5 hover:text-blue-700" href="{% url 'notes' %}">Notes</a>
             <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet" target="blank">Code</a>
-            <a class="mr-5 hover:text-blue-700" href="contact.html">Contact</a>
+            <a class="mr-5 hover:text-blue-700" href="mailto:dwightledet@protonmail.com">Contact</a>
             <a class="mr-5 hover:text-blue-700" href="{% url 'cv' %}" target="blank">CV</a>
           </nav>
         </div>
