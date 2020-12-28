@@ -14,6 +14,10 @@ def cv(request):
     return render(request, 'cv.html', {})
 
 
+def contact(request):
+    return render(request, 'contact.html', {})
+
+
 class ArticleListView(ListView):
     paginate_by = 5
     model = Post

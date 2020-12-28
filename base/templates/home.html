@@ -27,11 +27,11 @@
           <a class="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
           </a>
           <nav class="uppercase md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-blue-700" href="#">Project</a>
+            <a class="mr-5 hover:text-blue-700" href="{% url 'home' %}">Home</a>
             <a class="mr-5 hover:text-blue-700" href="{% url 'articles' %}" >Articles</a>
             <a class="mr-5 hover:text-blue-700" href="{% url 'notes' %}">Notes</a>
             <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet" target="blank">Code</a>
-            <a class="mr-5 hover:text-blue-700" href="mailto:dwightledet@protonmail.com">Contact</a>
+            <a class="mr-5 hover:text-blue-700" href="{% url 'contact' %}">Contact</a>
             <a class="mr-5 hover:text-blue-700" href="{% url 'cv' %}" target="blank">CV</a>
           </nav>
         </div>

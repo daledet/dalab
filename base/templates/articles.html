@@ -8,16 +8,16 @@
 </head>
 <body>
   <nav class="text-sm md:text-base border uppercase p-2 md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">    
-    <a class="mr-5 hover:text-blue-700" href="#">Project</a>
+    <a class="mr-5 hover:text-blue-700" href="{% url 'home' %}">Home</a>
     <a class="mr-5 hover:text-blue-700" href="articles.html" >Articles</a>
     <a class="mr-5 hover:text-blue-700" href="notes.html">Notes</a>
     <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet" target="blank">Code</a>
-    <a class="mr-5 hover:text-blue-700" href="contact.html">Contact</a>
+    <a class="mr-5 hover:text-blue-700" href="{% url 'contact' %}">Contact</a>
     <a class="mr-5 hover:text-blue-700" href="cv.html" target="blank">CV</a>
   </nav>
   {% for post in object_list%}
-   <section class="text-gray-600 body-font overflow-hidden">
-        <div class="container px-5 py-24 mx-auto">
+   <section class="text-gray-600 body-font overflow-hidden pt-10">
+        <div class="container px-12 py-6 mx-auto">
           <div class="-my-8 divide-y-2 divide-gray-100">
             <div class="py-8 flex flex-wrap md:flex-nowrap">           
               <div class="md:w-64 md:mt-2 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
@@ -25,7 +25,7 @@
                 <span class="mt-1 text-gray-500 text-sm">{{ post.post_date }}</span>
               </div>
               <div class="md:flex-grow max-w-prose">
-                <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{{ post.title }}</h2>
+                <h2 class="text-xl font-medium text-gray-900 title-font mb-2">{{ post.title }}</h2>
                 <p class="leading-relaxed">{{ post.body | safe | slice:"300" }}</p>
                 <a class="text-indigo-500 inline-flex items-center mt-4" href="{% url 'article' post.pk %}">Continue
                   <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
