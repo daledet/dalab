@@ -4,6 +4,7 @@ from .models import Post, Note
 from .forms import PostForm, UpdateForm
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
 
 
 def home(request):
@@ -15,7 +16,22 @@ def cv(request):
 
 
 def contact(request):
-    return render(request, 'contact.html', {})
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        # send an email
+        send_mail(
+            name,
+            message,
+            email,
+            ['dwightledet@protonmail.com']
+        )
+
+        return render(request, 'contact.html', {'name': name})
+    else:
+        return render(request, 'contact.html', {})
 
 
 class ArticleListView(ListView):

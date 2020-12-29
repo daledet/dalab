@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +11,32 @@
 <body>
   <nav class="text-sm md:text-base border uppercase p-2 md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
     <a class="mr-5 hover:text-blue-700" href="{% url 'home' %}">Home</a>
-    <a class="mr-5 hover:text-blue-700" href="articles.html" >Articles</a>
-    <a class="mr-5 hover:text-blue-700" href="notes.html">Notes</a>
+    <a class="mr-5 hover:text-blue-700" href="{% url 'articles' %}">Articles</a>
+    <a class="mr-5 hover:text-blue-700" href="{% url 'notes' %}">Notes</a>
     <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet" target="blank">Code</a>
     <a class="mr-5 hover:text-blue-700" href="{% url 'contact' %}">Contact</a>
-    <a class="mr-5 hover:text-blue-700" href="cv.html" target="blank">CV</a>
+    <a class="mr-5 hover:text-blue-700" href="{% url 'cv' %}" target="blank">CV</a>
   </nav>
 
+  
     <section class="text-gray-600 body-font relative">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-12">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Me</h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Receive updates on the project, and join in the fun.</p>
+            {% if name %}
+            <br>
+            <p class="lg:w-2/3 mx-auto text-green-500 leading-relaxed text-base">Thank you for contacting me, {{ name }}. I will reply shortly.</p>
+            {% endif %}
           </div>
+
+
+
+
+          <form action="{% url 'contact' %}" method="post">
+            {% csrf_token %}
+
+
           <div class="lg:w-1/2 md:w-2/3 mx-auto">
             <div class="flex flex-wrap -m-2">
               <div class="p-2 w-1/2">
@@ -46,12 +60,14 @@
               <div class="p-2 w-full">
                 <button class="flex mx-auto text-white bg-gray-700 border-0 py-2 px-8 focus:outline-none hover:bg-blue-700 rounded text-lg">Submit</button>
               </div>
-            
+            </form> 
+
+
+
             </div>
           </div>
         </div>
       </section>
-
       
 </body>
 </html>
