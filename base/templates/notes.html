@@ -11,19 +11,19 @@
     <a class="mr-5 hover:text-blue-700" href="{% url 'home' %}">Home</a>
     <a class="mr-5 hover:text-blue-700" href="{% url 'articles' %}" >Articles</a>
     <a class="mr-5 hover:text-blue-700" href="{% url 'notes' %}">Notes</a>
-    <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet" target="blank">Code</a>
-    <a class="mr-5 hover:text-blue-700" href="{% url 'contact' %}">Contact</a>
+    <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet?tab=repositories" target="blank">Code</a>
+    <a class="mr-5 hover:text-blue-700" href="mailto:dwightledet@gmail.com">Contact</a>
     <a class="mr-5 hover:text-blue-700" href="{% url 'cv' %}" target="blank">CV</a>
   </nav>
   {% for post in object_list%}
-  <section class="text-gray-600 body-font overflow-hidden pt-10">
+  <section class="text-gray-600 body-font overflow-hidden pt-2 md:pt-12">
     <div class="container px-12 py-6 mx-auto">
       <div class="-my-8 divide-y-2 divide-gray-100">
         <div class="py-8 flex flex-wrap md:flex-nowrap">           
-              <div class="md:w-64 md:mt-2 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                <span class="font-semibold title-font text-gray-700">{{ post.catagory }}</span>
-                <span class="mt-1 text-gray-500 text-sm">{{ post.post_date }}</span>
-              </div>
+          <div class="md:w-64 md:mt-2 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+            <span class="font-semibold title-font text-gray-700">{{ post.catagory }}</span>
+            <span class="mt-1 text-gray-500 text-sm">{{ post.post_date }}</span>
+          </div>
               <div class="md:flex-grow max-w-prose">
                 <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{{ post.title }}</h2>
                 <p class="leading-relaxed">{{ post.body | safe }}</p>

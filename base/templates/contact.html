@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
@@ -13,25 +13,23 @@
     <a class="mr-5 hover:text-blue-700" href="{% url 'home' %}">Home</a>
     <a class="mr-5 hover:text-blue-700" href="{% url 'articles' %}">Articles</a>
     <a class="mr-5 hover:text-blue-700" href="{% url 'notes' %}">Notes</a>
-    <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet" target="blank">Code</a>
+    <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet?tab=repositories" target="blank">Code</a>
     <a class="mr-5 hover:text-blue-700" href="{% url 'contact' %}">Contact</a>
     <a class="mr-5 hover:text-blue-700" href="{% url 'cv' %}" target="blank">CV</a>
   </nav>
 
   
     <section class="text-gray-600 body-font relative">
-        <div class="container px-5 py-24 mx-auto">
+        <div class="container px-5 py-12 mx-auto">
           <div class="flex flex-col text-center w-full mb-12">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Me</h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Receive updates on the project, and join in the fun.</p>
-            {% if name %}
+            {% if email %}
             <br>
             <p class="lg:w-2/3 mx-auto text-green-500 leading-relaxed text-base">Thank you for contacting me, {{ name }}. I will reply shortly.</p>
-            {% endif %}
+           {% else %}
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Me</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
+
           </div>
-
-
-
 
           <form action="{% url 'contact' %}" method="post">
             {% csrf_token %}
@@ -68,6 +66,7 @@
           </div>
         </div>
       </section>
+      {% endif %}
       
 </body>
 </html>
