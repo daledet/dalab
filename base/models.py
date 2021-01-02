@@ -5,12 +5,22 @@ from datetime import datetime, date
 from ckeditor.fields import RichTextField
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('home')
+
+
 class Post(models.Model):
     title = models.CharField(max_length=255)
     header_image = models.ImageField(
         null=True, blank=True, upload_to='images/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    catagory = models.CharField(max_length=255)
+    category = models.CharField(max_length=255, default='none')
     post_date = models.DateField(auto_now_add=True)
     body = RichTextField(blank=True, null=True)
 
@@ -26,7 +36,7 @@ class Note(models.Model):
     header_image = models.ImageField(
         null=True, blank=True, upload_to='images/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    catagory = models.CharField(max_length=255)
+    category = models.CharField(max_length=255)
     post_date = models.DateField(auto_now_add=True)
     body = RichTextField(blank=True, null=True)
 

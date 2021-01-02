@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
-from .models import Post, Note
+from django.views.generic import ListView, DetailView, CreateView
+from .models import Post, Note, Category
 from .forms import PostForm, UpdateForm
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
@@ -13,6 +13,11 @@ def home(request):
 
 def cv(request):
     return render(request, 'cv.html', {})
+
+
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats)
+    return render(request, 'categories.html', {'cats': cats, 'category_posts': category_posts})
 
 
 def contact(request):
@@ -53,10 +58,10 @@ class NoteListView(ListView):
     ordering = ['-post_date']
 
 
-# class AddArticleView(CreateView):
-#     model = Post
-#     form_class = PostForm
-#     template_name = 'add_post.html'
+# class AddCategoryView(CreateView):
+#     model = Category
+#     template_name = 'add_category.html'
+#     fields = '__all__'
 
 
 # class UpdateArticleView(UpdateView):

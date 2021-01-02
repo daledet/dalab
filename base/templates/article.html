@@ -39,8 +39,7 @@
         </div>
         <div class="w-full md:w-2/3 order-2 md:order-2 border-t md:border-none">
             <div class="max-w-prose leading-loose tracking-tight">
-                <h1 class="font-bold my-12">{{ post.title }} <br>{{ post.post_date }}</h1>
-
+                <h1 class="font-bold my-12">{{ post.title }} <br>{{ post.post_date }} <br> <span class="text-blue-700 hover\:text-blue-500">{{ post.category }}</span></h1>
                 <p>{{ post.body | safe}} </p>
 
             </div>
