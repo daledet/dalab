@@ -5,8 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dwight Ledet</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    {% load static %}
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <style>
+        .quicksand {
+            font-family: 'Nunito', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <section class="text-gray-600 body-font">
@@ -28,7 +37,7 @@
             <a class="mr-5 hover:text-blue-700" href="{% url 'home' %}">Home</a>
             <a class="mr-5 hover:text-blue-700" href="{% url 'articles' %}" >Articles</a>
             <a class="mr-5 hover:text-blue-700" href="{% url 'notes' %}">Notes</a>
-            <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet?tab=repositories" target="blank">Code</a>
+            <a class="mr-5 hover:text-blue-700" href="https://github.com/daledet/wind-project" target="blank">Code</a>
             <a class="mr-5 hover:text-blue-700" href="mailto:dwightledet@gmail.com">Contact</a>
             <a class="mr-5 hover:text-blue-700" href="{% url 'cv' %}" target="blank">CV</a>
           </nav>

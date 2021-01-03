@@ -1,41 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DAL | {{ post.title }}</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
 
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
-    <style>
-        .quicksand {
-            font-family: 'Nunito', sans-serif;
-        }
-    </style>
-
-</head>
-
-<body class="bg-gray-100 text-gray-700 font-sans quicksand">
-
-    <div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
-
-        <div class="w-full md:w-1/3 md:pr-32 order-1 md:order-1">
-            <div class="max-w-md md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 ">
-                <ul class="flex flex-wrap uppercase justify-center md:border-r flex-row my-4 md:my-12 md:flex-col">
-                    <li><a class="mr-5 hover:text-blue-700" href="{% url 'home' %}">Home</a></li>
-                    <li><a class="mr-5 hover:text-blue-700" href="{% url 'articles' %}">Articles</a></li>
-                    <li><a class="mr-5 hover:text-blue-700" href="{% url 'notes' %}">Notes</a></li>
-                    <li><a class="mr-5 hover:text-blue-700" href="https://github.com/daledet?tab=repositories" target="blank">Code</a></li>
-                    <a class="mr-5 hover:text-blue-700" href="mailto:dwightledet@gmail.com">Contact</a>
-                    <li><a class="mr-5 hover:text-blue-700" href="{% url 'cv' %}" target="blank">CV</a></li>
-                </ul>
-            </div>
-        </div>
         <div class="w-full md:w-2/3 order-2 md:order-2 border-t md:border-none">
             <div class="max-w-prose leading-loose tracking-tight">   
               {% for post in object_list%} 
@@ -45,27 +11,7 @@
                 {% endfor %}
             </div>
         </div>
-        <!-- <div class="w-full md:w-1/3 md:pr-32 pt-12 md:pt-0 md:sticky md:bottom-0 order-3 md:order-3">
-            <div class="max-w-md md:float-right md:text-right leading-loose tracking-tight md:mb-16">
-                <p class="font-bold my-4 md:my-12">Contact</p>
-                <ul class="flex flex-wrap justify-between flex-row md:flex-col">
-                    <li><a href="#" class="nav mx-2 md:mx-0">Email</a></li>
-                    <li><a href="#" class="nav mx-2 md:mx-0">Twitter</a></li>
-                    <li><a href="#" class="nav mx-2 md:mx-0">GitHub</a></li>
-
-                </ul>
-            </div>
-        </div> -->
-        <!-- <div class="w-full md:w-2/3 order-4 md:order-4">
-            <div class="max-w-prose leading-loose tracking-tight">
-                <p class="font-bold my-4 md:my-12">Sources</p>
-
-                <p class="mb-8">Arcu risus quis varius quam quisque id diam vel. Consectetur adipiscing elit ut aliquam purus sit amet. Nibh tortor id aliquet lectus proin nibh. </p>
-            </div>
-        </div> -->
-
-    </div>
-
+   
 </body>
+{% endblock %}
 
-</html>

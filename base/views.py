@@ -15,6 +15,10 @@ def cv(request):
     return render(request, 'cv.html', {})
 
 
+def data(request):
+    return render(request, 'data.html', {})
+
+
 def CategoryView(request, cats):
     category_posts = Post.objects.filter(category=cats)
     return render(request, 'categories.html', {'cats': cats, 'category_posts': category_posts})
