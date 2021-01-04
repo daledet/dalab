@@ -19,6 +19,10 @@ def data(request):
     return render(request, 'data.html', {})
 
 
+def projects(request):
+    return render(request, 'projects.html', {})
+
+
 def CategoryView(request, cats):
     category_posts = Post.objects.filter(category=cats)
     return render(request, 'categories.html', {'cats': cats, 'category_posts': category_posts})
@@ -60,22 +64,3 @@ class NoteListView(ListView):
     model = Note
     template_name = 'notes.html'
     ordering = ['-post_date']
-
-
-# class AddCategoryView(CreateView):
-#     model = Category
-#     template_name = 'add_category.html'
-#     fields = '__all__'
-
-
-# class UpdateArticleView(UpdateView):
-#     model = Post
-#     form_class = UpdateForm
-#     template_name = 'update_post.html'
-#     # fields = ['title', 'title_tag', 'body']
-
-
-# class DeleteArticleView(DeleteView):
-#     model = Post
-#     template_name = 'delete_post.html'
-#     success_url = reverse_lazy('home')

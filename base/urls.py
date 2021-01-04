@@ -9,5 +9,6 @@ urlpatterns = [
     path('notes/', NoteListView.as_view(), name='notes'),
     path('cv/', views.cv, name="cv"),
     path('data/', views.data, name="data"),
+    path('projects/', views.projects, name="projects"),
 
 ]
