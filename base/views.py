@@ -5,7 +5,7 @@ from .forms import PostForm, UpdateForm
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
-import config
+from . import config
 
 
 def home(request):
