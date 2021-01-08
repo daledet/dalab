@@ -3,4 +3,4 @@ media
 media_cdn
 static
 static_cdn
-base/config
+**/config
