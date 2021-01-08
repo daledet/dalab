@@ -3,6 +3,4 @@ media
 media_cdn
 static
 static_cdn
-envvar
-.env
 base/config
