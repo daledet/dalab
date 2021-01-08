@@ -5,6 +5,7 @@ from .forms import PostForm, UpdateForm
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
+import config
 
 
 def home(request):
@@ -20,7 +21,7 @@ def data(request):
     import requests
 
     api_request = requests.get(
-        "http://api.openweathermap.org/data/2.5/weather?id=3137115&appid=4fbcfd9147ff6df0e3ee3de039a4e70c&units=metric")
+        "http://api.openweathermap.org/data/2.5/weather?id=3137115&", config.api)
     try:
         api = json.loads(api_request.content)
 
