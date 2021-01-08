@@ -5,4 +5,4 @@ static
 static_cdn
 envvar
 .env
-config
+base/config
