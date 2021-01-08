@@ -1,5 +1,33 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="w-full md:w-2/3 order-2 md:order-2 border-t md:border-none">
+    <div class="max-w-prose leading-loose tracking-tight">   
+        <section class="text-gray-600 body-font">
+            <div class="container px-2 py-12 mx-auto">
+              <div class="flex items-center mx-auto sm:flex-row flex-col">
+                <div class="flex-grow sm:text-left mt-6 sm:mt-0">
+                  <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Wind Data Stavanger</h2>
 
+                  
+                  <div class="flex pb-8">
+                    <ul>
+                        <li>Lat: {{ api.coord.lat }} </li>
+                        <li>Lon: {{ api.coord.lat }} </li>
+                        <li>Temp: {{ api.main.temp }}</li>
+                        <li>Wind Speed: {{ api.wind.speed }}</li>
+                        <li>Wind Direction: {{ api.wind.deg }}</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          </section>
+    </div>
+</div>
+
+
+
+</body>
 {% endblock %}

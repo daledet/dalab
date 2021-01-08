@@ -37,7 +37,7 @@ class Note(models.Model):
         null=True, blank=True, upload_to='images/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(max_length=255)
-    post_date = models.DateField(auto_now_add=True)
+    note_date = models.DateField(auto_now_add=True)
     body = RichTextField(blank=True, null=True)
 
     def __str__(self):

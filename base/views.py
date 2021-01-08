@@ -5,6 +5,7 @@ from .forms import PostForm, UpdateForm
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
+from . import getters
 
 
 def home(request):
@@ -16,7 +17,18 @@ def cv(request):
 
 
 def data(request):
-    return render(request, 'data.html', {})
+    import json
+    import requests
+
+    api_request = requests.get(
+        "http://api.openweathermap.org/data/2.5/weather?id=3137115&appid=4fbcfd9147ff6df0e3ee3de039a4e70c&units=metric")
+    try:
+        api = json.loads(api_request.content)
+
+    except Exception as e:
+        api = "Error..."
+
+    return render(request, 'data.html', {'api': api})
 
 
 def projects(request):
@@ -63,4 +75,9 @@ class NoteListView(ListView):
     paginate_by = 5
     model = Note
     template_name = 'notes.html'
-    ordering = ['-post_date']
+    ordering = ['-note_date']
+
+
+class NoteDetailView(DetailView):
+    model = Note
+    template_name = 'note.html'

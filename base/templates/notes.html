@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <div class="w-full md:w-2/3 order-2 md:order-2 border-t md:border-none">
-            <div class="max-w-prose leading-loose tracking-tight">
-              {% for post in object_list%}
-              <h1 class="font-bold my-12">{{ post.title }} <br>{{ post.post_date }} <br> <span class="text-blue-700 hover\:text-blue-500">{{ post.category }}</span></h1>                <p>{{ post.body | safe}} </p>
-                {% endfor %}
 
+        <div class="w-full md:w-2/3 order-2 md:order-2 border-t md:border-none">
+            <div class="max-w-prose leading-loose tracking-tight">   
+              {% for note in object_list%} 
+                <h1 class="font-bold my-6">{{ note.title }} <br>{{ note.note_date }} <br> <span class="text-blue-700 hover\:text-blue-500">{{ note.category }}</span></h1>
+                <p>{{ note.body | safe | slice:400 }} ... </p>
+                <a href="{% url 'note' note.pk %}" class="text-blue-700 hover:text-blue-500">Continue</a>
+                <hr>
+                {% endfor %}
             </div>
         </div>
-    </div>
+   
 </body>
 {% endblock %}
